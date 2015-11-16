@@ -23,6 +23,13 @@ $app->middleware([
     \Illuminate\Session\Middleware\StartSession::class,
 ]);
 
+$app->get("/",function(){
+    return [
+        "app" => "codeception tutorial",
+        "message" => "hello world",
+        "version" => "0.0.1"
+    ];
+});
 
 $app->get("users",UserAPI::class."@getList");
 $app->get("users/{userId}",UserAPI::class."@getList");

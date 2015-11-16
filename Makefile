@@ -6,6 +6,6 @@ init:
 	touch database/database.sqlite
 	composer install
 	php artisan db:create
-cc:
-	vendor/bin/codecept bootstrap
+codeception:
+	vendor/bin/codecept bootstrap --empty
 	vendor/bin/codecept generate:suite api
