@@ -4,6 +4,7 @@ init:
 	cp .env.sample .env
 	mkdir database
 	touch database/database.sqlite
+	composer install
 	php artisan db:create
 cc:
 	vendor/bin/codecept bootstrap
