@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+$app = require_once __DIR__.'/bootstrap.php';
+
+/** @var Kernel $kernel */
+$kernel = $app->make(\Laravel\Lumen\Console\Kernel::class);
+$kernel->commands = [
+    CreateDatabase::class
+];
+
+exit($kernel->handle(new ArgvInput, new ConsoleOutput));
